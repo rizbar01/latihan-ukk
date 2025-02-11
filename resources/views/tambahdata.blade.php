@@ -13,7 +13,7 @@
         <textarea class="form-control" name="alamat" id="alamat" rows="2"></textarea>
       </div>
       <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
-        <option selected>Pilih Jenis Kelaminmu</option>
+        <option selected>Pilih Jenis Kelaminmu Wajib</option>
         <option value="Laki-Laki">Laki-Laki</option>
         <option value="Perempuan">Perempuan</option>
       </select>
