@@ -41,5 +41,17 @@ class SiswaController extends Controller
         $siswa = data_siswa::find($id);
         return view('editdata', compact('siswa'));
     }
-}
 
+    public function update(Request $request, $id){
+        $siswa = data_siswa::findOrFail($id);
+
+        $siswa -> update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'sekolah' => $request->sekolah
+        ]);
+        return redirect()->route('siswa.index');
+
+    }
+}

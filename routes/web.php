@@ -24,3 +24,5 @@ Route::get('tambahdata', [SiswaController::class, 'add'])->name('tambahdata');
 Route::post('tambahdata', [SiswaController::class,'store'])->name('tambahdata.process');
 Route::delete('siswa/{id}', [SiswaController::class,'destroy'])->name('siswa.delete');
 Route::get('siswa/{id}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('siswa/{id}/edit', [SiswaController::class, 'update'])->name('siswa.update');
+
