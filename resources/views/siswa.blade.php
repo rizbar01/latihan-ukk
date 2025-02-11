@@ -14,7 +14,7 @@
         <td>Asal Sekolah</td>
         <td>Menu</td>
     </tr>
-
+.
     @foreach ($siswa as $sw)
     <tr>
         <td>{{ $loop->iteration }}</td>
