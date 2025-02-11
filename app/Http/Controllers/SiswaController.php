@@ -36,6 +36,10 @@ class SiswaController extends Controller
         $data->delete();
         return redirect()->route('siswa.index');
     }
-    
+
+    public function edit($id){
+        $siswa = data_siswa::find($id);
+        return view('editdata', compact('siswa'));
+    }
 }
 
