@@ -18,7 +18,12 @@ Route::get('/about', function () {
     return view('tambahdata');
 });
 */
-
+// Route untuk menentukan bagaimana aplikasi merespons permintaan pengguna pada URL tertentu
+// get berarti tindakan yang dilakukan adalah mengambil
+//'siswa' berarti utl yang dituju
+//controller itu bertanggung jawab ata yang menangani data
+//index berarti fungsinya menampilkan data
+//name itu nama fungsi yang dijalankan ini
 Route::get('siswa', [SiswaController::class, 'index'])->name('siswa.index');
 Route::get('tambahdata', [SiswaController::class, 'add'])->name('tambahdata');
 Route::post('tambahdata', [SiswaController::class,'store'])->name('tambahdata.process');
