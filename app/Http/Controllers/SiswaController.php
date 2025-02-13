@@ -23,6 +23,11 @@ class SiswaController extends Controller
             'jenis_kelamin' =>'required',
             'sekolah' =>'required',
 
+        ], [
+            'nama.required' => 'Nama siswa harus diisi',
+            'alamat.required' => 'Alamat siswa harus diisi',
+            'jenis_kelamin.required' => 'Jenis kelamin siswa harus diisi',
+           'sekolah.required' => 'Sekolah siswa harus diisi',
         ]);
 
         data_siswa::create($request->all());
@@ -45,13 +50,28 @@ class SiswaController extends Controller
     public function update(Request $request, $id){
         $siswa = data_siswa::findOrFail($id);
 
+        $request->validate([
+            'nama' =>'required',
+            'alamat' =>'required',
+            'jenis_kelamin' =>'required',
+            'sekolah' =>'required',
+
+        ], [
+            'nama.required' => 'Nama siswa harus diisi',
+            'alamat.required' => 'Alamat siswa harus diisi',
+            'jenis_kelamin.required' => 'Jenis kelamin siswa harus diisi',
+            'sekolah.required' => 'Sekolah siswa harus diisi',
+        ]);
+
         $siswa -> update([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'jenis_kelamin' => $request->jenis_kelamin,
             'sekolah' => $request->sekolah
         ]);
+
         return redirect()->route('siswa.index');
 
     }
+
 }

@@ -26,7 +26,7 @@
             <form action="{{ Route('siswa.delete', $sw['id']) }}" method="post">
                 @method('DELETE')
                 @csrf
-                <button class="btn btn-danger" type="submit">Hapus</button>
+                <button class="btn btn-danger"  type="submit" onclick="return confirm('Anda Yakin Menghapus?')">Hapus</button>
                 <a href="{{route('siswa.edit', $sw['id'])}}" class="btn btn-warning" >Edit</a>
             </form>
 

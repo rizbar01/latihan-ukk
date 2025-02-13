@@ -7,6 +7,7 @@ use App\Http\Controllers\SiswaController;
     return view('welcome');
 });*/
 
+//pemanggilan view secara langsung, menggunakan function
 Route::get('/', function () {
     return view('home');
 });
@@ -26,8 +27,10 @@ Route::get('/about', function () {
 //name itu nama fungsi yang dijalankan ini
 Route::get('siswa', [SiswaController::class, 'index'])->name('siswa.index');
 Route::get('tambahdata', [SiswaController::class, 'add'])->name('tambahdata');
+// post digunakan mengirim data, terlebih data yang sensitif
 Route::post('tambahdata', [SiswaController::class,'store'])->name('tambahdata.process');
 Route::delete('siswa/{id}', [SiswaController::class,'destroy'])->name('siswa.delete');
 Route::get('siswa/{id}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+//put merubah data
 Route::put('siswa/{id}/edit', [SiswaController::class, 'update'])->name('siswa.update');
 
